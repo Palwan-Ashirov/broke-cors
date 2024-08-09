@@ -7,7 +7,7 @@ const port = 3010
 const crsOptions = {
   origin: '*',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Tg-Auth'],
+  allowedHeaders: ['Content-Type', 'Tg-Auth', 'Cookies'],
 }
 app.use(cors(crsOptions))
 
