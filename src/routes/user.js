@@ -25,4 +25,9 @@ router.get('/v1/users/me/position', (req, res) => {
 router.get('/v1/users/me/balance', (req, res) => {
   handleApiRequest(req, res, '/v1/users/me/balance')
 })
+
+router.get('/', (req, res) => {
+  res.send('Hello from user routes')
+})
+
 export default router
