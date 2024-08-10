@@ -14,3 +14,14 @@ export const requestApi = async ({ url, method = 'get', headers = {}, params = {
   })
   return response
 }
+
+// Helper function to handle API requests
+export const handleApiRequest = async (req, res, endpoint) => {
+  try {
+    const token = req.headers['tg-auth']
+    const response = await requestApi({ url: endpoint, headers: { 'tg-auth': token } })
+    res.send(response.data)
+  } catch (error) {
+    res.status(500).json({ error: error.message })
+  }
+}
